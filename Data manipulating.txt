@@ -1,0 +1,26 @@
+                   Data manipulation Language
+       
+1) Product Table
+INSERT INTO Product (Product_id, Product_Name, Caegoriy, Price)
+VALUES (‘P01’, ’SAMSUNG GALAXY S20’, ’Smartphone’, 3299);
+-------------------------------------------------------------------------------------------------------
+INSERT INTO Product 
+VALUES (‘P02’, ’ASUS Note Book’, ’PC’, 4599);
+2) Customer Table
+INSERT INTO Customer (Customer_id, Customer_Name, Customer_Tel)
+VALUES (‘C01’, ‘ALI’, 71321009);
+-------------------------------------------------------------------------------------------------------
+INSERT INTO Customer 
+VALUES (‘C02’, ’ASMA’, 77645823);
+3) Orders Table
+INSERT INTO Orders (Customer_id, Product_id,OrderDate,Quantity, Total_amount)
+VALUES (
+SELECT Customer_id FROM Customer WHERE Customer_Name=‘ALI’, 
+SELECT Product_id FROM Product WHERE Product_Name=‘ASUS Note Book’,
+NULL, 2 , 9198);
+-------------------------------------------------------------------------------------------------------
+INSERT INTO Orders 
+VALUES (
+SELECT Customer_id FROM Customer WHERE Customer_Name=‘ASMA’, 
+SELECT Product_id FROM Product WHERE Product_Name=‘SAMSUNG
+GALAXY S20’, 28/05/2020, 1, 3299);
